@@ -1,0 +1,15 @@
+# Render Blueprint — deploys the ComprimirPDF API with one click.
+# In Render: New → Blueprint → connect this repo.
+# Then add your custom domain (comprimirpdf.dev) under Settings → Custom Domains.
+services:
+  - type: web
+    name: comprimirpdf-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: FRONTEND_URLS
+        value: https://comprimirpdf.dev,https://www.comprimirpdf.dev

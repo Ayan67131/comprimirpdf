@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# Runtime data (never commit uploads or user files)
+uploads/
+compressed/
+users.json
+
+# OS
+.DS_Store
